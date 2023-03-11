@@ -1,16 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import { Refine, GitHubBanner } from "@pankod/refine-core";
-import {
-  notificationProvider,
-  Layout,
-  ReadyPage,
-  ErrorComponent,
-} from "@pankod/refine-antd";
-import "@pankod/refine-antd/dist/reset.css";
+import { Refine, GitHubBanner } from '@pankod/refine-core';
+import { notificationProvider, Layout, ReadyPage, ErrorComponent } from '@pankod/refine-antd';
+import '@pankod/refine-antd/dist/reset.css';
 
-import routerProvider from "@pankod/refine-react-router-v6";
-import dataProvider from "@pankod/refine-simple-rest";
+import routerProvider from '@pankod/refine-react-router-v6';
+import dataProvider from '@pankod/refine-simple-rest';
+import { AntdInferencer } from '@pankod/refine-inferencer/antd';
 
 function App() {
   return (
@@ -23,7 +19,16 @@ function App() {
         ReadyPage={ReadyPage}
         catchAll={<ErrorComponent />}
         routerProvider={routerProvider}
-        dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+        dataProvider={dataProvider('https://api.fake-rest.refine.dev')}
+        resources={[
+          {
+            name: 'products',
+            list: AntdInferencer,
+            show: AntdInferencer,
+            create: AntdInferencer,
+            edit: AntdInferencer
+          }
+        ]}
       />
     </>
   );
