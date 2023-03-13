@@ -5,8 +5,8 @@ import { notificationProvider, Layout, ReadyPage, ErrorComponent } from '@pankod
 import '@pankod/refine-antd/dist/reset.css';
 
 import routerProvider from '@pankod/refine-react-router-v6';
-import dataProvider from '@pankod/refine-simple-rest';
 import { AntdInferencer } from '@pankod/refine-inferencer/antd';
+import { dataProvider } from 'rest-data-provider';
 
 function App() {
   return (
