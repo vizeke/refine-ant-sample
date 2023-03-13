@@ -148,7 +148,7 @@ export const dataProvider = (apiUrl: string, httpClient: AxiosInstance = axiosIn
     if (headers) {
       httpClient.defaults.headers = {
         ...httpClient.defaults.headers,
-        ...headers
+        // ...headers
       };
     }
 
